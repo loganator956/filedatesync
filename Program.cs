@@ -100,7 +100,7 @@ namespace filedatesync
             if (newDateTime.HasValue)
             {
                 Console.WriteLine($"{newDateTime.ToString()} {file}");
-                //fileInfo.CreationTime = fileInfo.LastWriteTime = newDateTime.Value;
+                fileInfo.CreationTime = fileInfo.LastWriteTime = newDateTime.Value;
             }
             else
             {
