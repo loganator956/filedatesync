@@ -19,16 +19,20 @@ namespace filedatesync
                 {
                     throw new ArgumentException("Not enough arguments");
                 }
-                for (int i = 0; i < args.Length - 1; i++)
+                for (int i = 0; i < args.Length; i++)
                 {
                     switch (args[i].ToLower())
                     {
                         default:
-                            throw new ArgumentException($"Argument not recognised \"{args[i]}\"");
+                            if (i != args.Length-1)
+                            {
+                                throw new ArgumentException($"Argument not recognised \"{args[i]}\"");
+                            }
+                            break;
                         case "-h":
                         case "--help":
                             ShowHelpPage();
-                            break;
+                            return;
                         case "-e":
                         case "--earliest":
                             operatingMode = Mode.Earliest;
