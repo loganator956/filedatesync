@@ -13,6 +13,8 @@ namespace filedatesync
 
         static void Main(string[] args)
         {
+            Version version = new Version(1,1,1,0);
+            Console.WriteLine($"filedatesync Version {version.ToString()}");
             try
             {
                 if (args.Length == 0)
